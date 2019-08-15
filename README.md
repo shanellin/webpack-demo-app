@@ -28,6 +28,9 @@
 ## 六、 module
 用來放置loader的rule，可將sass、png...等檔案透過各自的loader轉譯最後插入webpack的output js中
 
+# webpack流程圖（8/15目前見解）
+![](https://i.imgur.com/KTsR6h8.png)
+
 # express多頁面配置
 
 ## 一、 webpackDevMiddleware
