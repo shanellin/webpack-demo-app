@@ -1,9 +1,8 @@
-const path = require("path");
-
 module.exports = {
   devServer: {
     writeToDisk: true
   },
+  target: 'web',
   entry: {
     main: "./src/index.js",
     vendor: "./src/vendor.js"

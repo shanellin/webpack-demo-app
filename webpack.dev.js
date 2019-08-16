@@ -1,7 +1,6 @@
 const path = require("path");
 const common = require("./webpack.common");
 const merge = require("webpack-merge");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -19,6 +18,7 @@ module.exports = merge(common, {
       favicon: "./src/assets/bluenet_icon_for-APP-120.png",
       template: "./src/html/template.html",
       chunks: ["main"],
+      excludeChunks: ["server"],
       filename: "template.html"
     }),
     new HtmlWebpackPlugin({
@@ -26,9 +26,9 @@ module.exports = merge(common, {
       favicon: "./src/assets/bluenet_icon_for-APP-120.png",
       template: "./src/html/template2.html",
       chunks: ["vendor"],
+      excludeChunks: ["server"],
       filename: "template2.html"
-    }),
-    new CleanWebpackPlugin()
+    })
   ],
   module: {
     rules: [
