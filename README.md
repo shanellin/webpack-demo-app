@@ -56,3 +56,15 @@ compiler.outputFileSystem.readFile(path.join(compiler.outputPath, file), (err, r
         });
 ```
 
+# [區分開發和生產環境]
+
+## 一、 建立webpack.server.js
+為了使webpack支持node.js環境及其檔案（require...等），我們須建立webpack.server.js並將target設定為node。
+
+## 二、 server.js分成dev&prod
+在webpack.server.js加入環境變數判別式，判別需用server.dev.js還是server.prod.js，因為只有dev環境才需要熱加載，因此需將server.js區分為兩個檔
+
+## 三、 package.js指令
+區分為dev&prod建置指令，分別執行
+DEV：[webpack.server.js（此已加入server.dev.js） -> webpack.dev.js -> node ./dist/server.js]。
+PROD：[webpack.server.js（此已加入server.prod.js） -> webpack.prod.js -> node ./dist/server.js]。
